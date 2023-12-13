@@ -8,7 +8,7 @@
  */
 void custom_shell_prompt(void)
 {
-	custom_print(#cisfun$);
+	custom_print(user);
 	custom_print(" ");
 	fflush(stdout);
 }

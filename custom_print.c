@@ -6,7 +6,7 @@
  * @input: Message to be printed out
  * Return: 0 successful
  */
-void custom_print(const char *input)
+void custom_print(FILE *stream, const char *format, ...)`
 {
 	write(STDOUT_FILENO, input, strlen(input));
 }
