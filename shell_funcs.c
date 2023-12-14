@@ -6,7 +6,7 @@
 #include "shell_functions.h"
 
 void displayPrompt() {
-    printf(":) ");
+    printf("$ ");
 }
 
 int executeCommand(char *command, char *args[]) {
