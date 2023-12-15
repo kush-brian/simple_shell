@@ -15,6 +15,7 @@ int main(void)
 	char input[MAX_COMMAND_LENGTH];
 	char command[MAX_COMMAND_LENGTH];
 	char *args[MAX_ARGS];
+	int i;
 
 	while (1)
 	{
@@ -29,7 +30,7 @@ int main(void)
 		parseInput(input, command, args);
 		executeCommand(command, args);
 
-		for (int i = 0; args[i] != NULL; i++)
+		for (i = 0; args[i] != NULL; i++)
 		{
 			free(args[i]);
 		}

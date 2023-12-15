@@ -7,7 +7,7 @@
 
 void displayPrompt();
 int executeCommand(char *command, char *args[]);
-void parseInput(char *input, char *command, char *args[]);
+void **parseInput(char *input, char *command, char *args[]);
 void exitShell();
 int executeCommandWithPath(char *command, char *args[]);
 void printEnvironment();

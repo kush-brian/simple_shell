@@ -11,8 +11,9 @@ void exitShell()
 void printEnvironment()
 {
 	extern char **environ;
+	char **env = environ;
 	
-	for (char **env = environ; *env != NULL; env++)
+	for (**env = environ; *env != NULL; env++)
 	{
 		printf("%s\n", *env);
 	}

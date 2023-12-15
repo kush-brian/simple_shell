@@ -7,6 +7,12 @@
 
 int executeCommandWithPath(char *command, char *args[])
 {
+	int status = 0;
+        int pid;
+	char *path = getenv("PATH");
+        char *path_copy = strdup(path);
+        char *dir = strtok(path_copy, ":");
+
 	if (strcmp(command, "exit") == 0)
 	{
 		exitShell();
@@ -16,13 +22,6 @@ int executeCommandWithPath(char *command, char *args[])
 		printEnvironment();
 		return (0);
 	}
-	int status = 0;
-	int pid;
-
-	char *path = getenv("PATH");
-	char *path_copy = strdup(path);
-	char *dir = strtok(path_copy, ":");
-
 	while (dir != NULL)
 	{
 		char path_command[MAX_COMMAND_LENGTH];
@@ -56,5 +55,4 @@ int executeCommandWithPath(char *command, char *args[])
 		printf("Command not found: %s\n", command);
 		free(path_copy);
 		return (-1);
-}
-}
+	}

@@ -12,6 +12,8 @@ void displayPrompt()
 
 int executeCommand(char *command, char *args[])
 {
+	int status = 0;
+
 	if (strcmp(command, "exit") == 0)
 	{
 		exitShell();
@@ -21,18 +23,17 @@ int executeCommand(char *command, char *args[])
 		printEnvironment();
 		return (0);
 	}
-	int status = 0;
 
 	status = executeCommandWithPath(command, args);
 
 	return (status);
 }
 
-void parseInput(char *input, char *command, char *args[])
+void **parseInput(char *input, char *command, char *args[])
 {
 	int i = 0;
 	char *token = strtok(input, " ");
-	
+
 	while (token != NULL)
 	{
 		if (i == 0)
